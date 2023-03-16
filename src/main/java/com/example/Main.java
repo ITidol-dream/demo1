@@ -13,6 +13,9 @@ public class Main {
         System.out.println("开始");
         student.syncTest();
         System.out.println("结束");
+        System.out.println("开始");
+        student.asyncTest();
+        System.out.println("结束");
 
     }
 }
