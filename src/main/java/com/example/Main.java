@@ -10,11 +10,12 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         ApplicationContext context = new AnnotationConfigApplicationContext(MainConfiguration.class);
         Student student  = context.getBean(Student.class);
+        Student student1  = new Student();
+        System.out.println(student1.getClass());
+        System.out.println(student);
         System.out.println("开始");
-        student.syncTest();
-        System.out.println("结束");
-        System.out.println("开始");
-        student.asyncTest();
+//        student.asyncTest();
+        System.out.println(student.getClass());
         System.out.println("结束");
 
 
