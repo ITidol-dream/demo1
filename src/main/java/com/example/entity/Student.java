@@ -11,12 +11,26 @@ import org.springframework.stereotype.Component;
 @Component
 @ToString
 public class Student {
-    @Value("${test.name}")
-    String name;
+  //  @Value("${test.name}")  //`@Value`中的`${...}`表示占位符，它会读取外部配置文件的属性值装配到属性中
+    public String name;
+    public  int age;
     @Autowired
     ArtTeacher artTeacher;
+    public Student(@Value("${test.name}") String name){ //通过构造方法注入
+        this.name = name;
+        this.age = 12;
 
-//    public Student(ArtTeacher artTeacher) {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    //    public Student(ArtTeacher artTeacher) {
 //        this.artTeacher  = artTeacher;
 //    }
 public void syncTest() throws InterruptedException {
